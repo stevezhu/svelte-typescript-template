@@ -1,7 +1,8 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
+import svelte from 'rollup-plugin-svelte';
 import {terser} from 'rollup-plugin-terser';
 
 const svelteConfig = require('./svelte.config');
@@ -17,8 +18,6 @@ export default {
     file: 'public/build/bundle.js',
   },
   plugins: [
-    svelte(svelteConfig),
-
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
     // some cases you'll need additional configuration -
@@ -29,6 +28,9 @@ export default {
       dedupe: ['svelte'],
     }),
     commonjs(),
+
+    svelte(svelteConfig),
+    babel({babelHelpers: 'bundled'}),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
