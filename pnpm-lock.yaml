@@ -8,6 +8,8 @@ devDependencies:
   rollup-plugin-svelte: 5.2.2_rollup@2.10.8+svelte@3.22.3
   rollup-plugin-terser: 6.0.1_rollup@2.10.8
   svelte: 3.22.3
+  svelte-preprocess: 3.7.4_svelte@3.22.3+typescript@3.9.3
+  typescript: 3.9.3
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.8.3:
@@ -87,12 +89,22 @@ packages:
     dev: true
     resolution:
       integrity: sha512-90hiq6/VqtQgX8Sp0EzeIsv3r+ellbGj4URKj5j30tLlZvRUpnAe9YbYnjl3pJM93GyXU0tghHhvXHq+5rnCKA==
+  /@types/pug/2.0.4:
+    dev: true
+    resolution:
+      integrity: sha1-h3L80EGOPNLMFxVV1zAHQVBR9LI=
   /@types/resolve/0.0.8:
     dependencies:
       '@types/node': 14.0.5
     dev: true
     resolution:
       integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
+  /@types/sass/1.16.0:
+    dependencies:
+      '@types/node': 14.0.5
+    dev: true
+    resolution:
+      integrity: sha512-2XZovu4NwcqmtZtsBR5XYLw18T8cBCnU2USFHTnYLLHz9fkhnoEMoDsqShJIOFsFhn5aJHjweiUUdTrDGujegA==
   /ansi-styles/3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -213,6 +225,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+  /detect-indent/6.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-oSyFlqaTHCItVRGK5RmrmjB+CmaMOW7IaNA/kdxqhoa6d17j/5ce9O9eWXmV/KEdRwqpQA+Vqe8a8Bsybu4YnA==
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -392,6 +410,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-3hQhEUF027BuxZjQA3s7rIv/7VCQPa27hN9u9g87sEkWaKwQPuXOkVKtOeiyUrnWqTDiOs8Ed2rwg733mB0R5w==
+  /min-indent/1.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
   /minimatch/3.0.4:
     dependencies:
       brace-expansion: 1.1.11
@@ -553,6 +577,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
+  /strip-indent/3.0.0:
+    dependencies:
+      min-indent: 1.0.0
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -569,6 +601,55 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
+  /svelte-preprocess/3.7.4_svelte@3.22.3+typescript@3.9.3:
+    dependencies:
+      '@types/pug': 2.0.4
+      '@types/sass': 1.16.0
+      detect-indent: 6.0.0
+      strip-indent: 3.0.0
+      svelte: 3.22.3
+      typescript: 3.9.3
+    dev: true
+    engines:
+      node: '>= 7.6.0'
+    peerDependencies:
+      '@babel/core': ^7.8.4
+      coffeescript: ^2.5.1
+      less: ^3.10.3
+      node-sass: ^4.13.1
+      postcss: ^7.0.26
+      postcss-load-config: ^2.1.0
+      pug: ^2.0.4
+      sass: ^1.26.3
+      stylus: ^0.54.7
+      svelte: ^3.18.1
+      typescript: ^3.7.5
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      coffeescript:
+        optional: true
+      less:
+        optional: true
+      node-sass:
+        optional: true
+      postcss:
+        optional: true
+      postcss-load-config:
+        optional: true
+      pug:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      svelte:
+        optional: true
+      typescript:
+        optional: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-0nW7TIjbav2nmw1Y7EAFRRkhNVwJ3zKN85/eITLQMkPuhqHO2i2IK0O3y4YXsSXlc0VGI5jQDVXkcXpga6zzew==
   /svelte/3.22.3:
     dev: true
     engines:
@@ -600,6 +681,13 @@ packages:
       node: '>=8.0'
     resolution:
       integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
+  /typescript/3.9.3:
+    dev: true
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-D/wqnB2xzNFIcoBG9FG8cXRDjiqSTbG2wd8DMZeQyJlP1vfTkIxH4GKveWaEBYySKIg+USu+E+EDIR47SqnaMQ==
   /wrappy/1.0.2:
     dev: true
     resolution:
@@ -619,3 +707,5 @@ specifiers:
   rollup-plugin-terser: ^6.0.1
   sirv-cli: ^0.4.6
   svelte: ^3.22.3
+  svelte-preprocess: ^3.7.4
+  typescript: ^3.9.3
