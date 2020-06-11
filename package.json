@@ -10,7 +10,7 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.6"
+    "sirv-cli": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
