@@ -1,10 +1,10 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 import livereload from 'rollup-plugin-livereload';
 import svelte from 'rollup-plugin-svelte';
 import {terser} from 'rollup-plugin-terser';
-
 const svelteConfig = require('./svelte.config');
 
 const production = !process.env.ROLLUP_WATCH;
@@ -30,6 +30,7 @@ export default {
     commonjs(),
 
     svelte(svelteConfig),
+    typescript({sourceMap: !production}),
     babel({babelHelpers: 'bundled'}),
 
     // In dev mode, call `npm run start` once
