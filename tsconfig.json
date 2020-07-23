@@ -1,8 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", "public/*"],
   "compilerOptions": {
     "target": "esnext",
     "strict": true,
-    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node"
   }
 }
