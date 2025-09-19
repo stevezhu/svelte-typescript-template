@@ -11,7 +11,7 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.6",
+    "sirv-cli": "^3.0.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
